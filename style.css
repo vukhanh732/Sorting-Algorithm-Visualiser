@@ -1,0 +1,34 @@
+#sortingAlgo{
+    text-align: right;
+   
+}
+
+body{
+    background-color: #f2f2f2;
+}
+
+#array-container {
+    display: flex;
+    align-items: flex-end; /* This makes sure the bars start from the same baseline */
+    height: 400px; /* Or any suitable height */
+     /* Adds some space between the bars */
+}
+
+.bar {
+    width: 10px; /* Or any suitable width */
+    background-color: #6495ed;
+    margin: 0 2px; /* Adds some space between the bars */
+    transition: height 0.3s linear, background-color 0.3s linear;
+}
+
+.bar.sorted {
+    /* change the color to indicate that this bar is sorted */
+    background-color: green;
+}
+
+
+.bar.compared {
+    /* change the color to indicate that this bar is being compared */
+    background-color: red;
+}
+
