@@ -21,14 +21,22 @@ body{
     transition: height 0.3s linear, background-color 0.3s linear;
 }
 
-.bar.sorted {
-    /* change the color to indicate that this bar is sorted */
-    background-color: green;
+.bar.compared {
+    background-color: blue;
+    transition: background-color 0.3s;
 }
 
-
-.bar.compared {
-    /* change the color to indicate that this bar is being compared */
+.bar.swapped {
     background-color: red;
+    transition: background-color 0.3s;
+}
+
+.bar.sorted {
+    background-color: green;
+    transition: background-color 0.3s;
+}
+
+.merged {
+    background-color: green;  /* You can choose any color you prefer */
 }
 
