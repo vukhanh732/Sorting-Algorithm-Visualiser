@@ -1,4 +1,11 @@
+var isSorted = false;
+
 function BubbleSort() {
+    if (isSorted) {
+        alert("Array is already sorted.");
+        return;
+    }
+    
     var speed = getSpeed();
     var bars = Array.from(document.getElementsByClassName('bar'));
     var array = bars.map(bar => parseInt(bar.dataset.size));
@@ -40,8 +47,19 @@ function BubbleSort() {
         setTimeout(() => {
             bars[len - i - 1].classList.add('sorted');
         }, len * (i + 1) * speed);
+        setTimeout(() => {
+            isSorted = true;
+        }, len * len * speed);
     }
 }
+
+document.getElementById('BubbleSort').addEventListener('click', function() {
+    document.getElementById('algorithm-name').innerText = "Bubble Sort";
+    document.getElementById('algorithm-description').innerText = "Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted.";
+    document.getElementById('algorithm-complexity').innerText = "Time Complexity: O(n^2) | Space Complexity: O(1)";
+
+});
+
 
 
 

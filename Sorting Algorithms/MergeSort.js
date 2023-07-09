@@ -1,3 +1,5 @@
+var isSorted = false;
+
 // utility function to swap bar heights
 async function swap(el1, el2) {
     var speed = getSpeed();
@@ -52,7 +54,6 @@ async function merge(l, m, r) {
     i = 0;
     j = 0;
     k = l;
-    console.log(i, j, k, n1, n2);
     while (i < n1 && j < n2) {
         await new Promise((resolve) =>
             setTimeout(() => {
@@ -119,11 +120,20 @@ async function mergeSort(l, r) {
 }
 
 // add event listener to MergeSort button
-document.getElementById('MergeSort').addEventListener('click', function() {
+document.getElementById('MergeSort').addEventListener('click', async function() {
+    document.getElementById('algorithm-name').innerText = "Merge Sort";
+    document.getElementById('algorithm-description').innerText = "Merge Sort is an efficient, stable sorting algorith that makes use of the divide and conquer strategy. Concepts behind merge sort algorithm is the main basis for the more complex sorts. It divides the input array into two halves, sorts them separately and then merges them.";
+    document.getElementById('algorithm-complexity').innerText = "Time Complexity: O(n log n) | Space Complexity: O(n)";
+    if (isSorted) {
+        alert("Array is already sorted.");
+        return;
+    }
     sorting = true;
     var bars = document.querySelectorAll('.bar');
     var barHeights = [...bars].map((bar) => parseInt(bar.style.height));
     var l = 0;
     var r = parseInt(barHeights.length) - 1;
-    mergeSort(l, r);
+    await mergeSort(l, r);
+    sorting = false;
+    isSorted = true;
 });

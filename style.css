@@ -22,7 +22,7 @@ body{
 }
 
 .bar.compared {
-    background-color: blue;
+    background-color: yellow;
     transition: background-color 0.3s;
 }
 
@@ -36,7 +36,5 @@ body{
     transition: background-color 0.3s;
 }
 
-.merged {
-    background-color: green;  /* You can choose any color you prefer */
-}
+
 

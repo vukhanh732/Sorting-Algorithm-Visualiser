@@ -1,6 +1,6 @@
 // Global sorting state
+var isSorted = false;
 var sorting = false;
-
 function generateArray() {
     // If sorting is ongoing, stop it
     sorting = false;
@@ -28,6 +28,7 @@ function generateArray() {
         bar.dataset.size = array[i];
         arrayContainer.appendChild(bar);
     }
+    isSorted = false;
 }
 
 function getSpeed() {
@@ -58,4 +59,18 @@ function recreateBars(array) {
         bar.dataset.size = array[i];
         arrayContainer.appendChild(bar);
     }
+}
+
+document.getElementById('generateArray').addEventListener('click', function() {
+    document.getElementById('algorithm-name').innerText = "";
+    document.getElementById('algorithm-description').innerText = "";
+    document.getElementById('algorithm-complexity').innerText = "";
+})
+
+function toggleButtons(enable) {
+    document.getElementById('BubbleSort').disabled = !enable;
+    document.getElementById('QuickSort').disabled = !enable;
+    document.getElementById('MergeSort').disabled = !enable;
+    document.getElementById('HeapSort').disabled = !enable;
+    document.getElementById('generateNewArray').disabled = !enable;
 }
