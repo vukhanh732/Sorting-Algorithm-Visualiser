@@ -1,2 +1,2 @@
 # Sorting-Algorithm-Visualiser
-A visualisation of different sorting algorithms work
+A visualisation of how different sorting algorithms work
